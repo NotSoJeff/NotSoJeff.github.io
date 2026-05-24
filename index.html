@@ -1,131 +1,99 @@
 <!DOCTYPE html>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: var(--font-mono, monospace); background: #0a0d12; color: #c9d1d9; min-height: 100vh; }
-  .hero { padding: 3rem 2rem 2rem; border-bottom: 0.5px solid #21262d; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at top left, rgba(88,166,255,0.07) 0%, transparent 60%); pointer-events: none; }
-  .tag { font-size: 11px; color: #58a6ff; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.75rem; }
-  .name { font-size: 2.4rem; font-weight: 700; color: #e6edf3; letter-spacing: -1px; line-height: 1.1; }
-  .name span { color: #58a6ff; }
-  .title-row { display: flex; align-items: center; gap: 10px; margin-top: 0.5rem; flex-wrap: wrap; }
-  .badge { font-size: 11px; padding: 3px 10px; border-radius: 20px; border: 0.5px solid; }
-  .badge-blue { color: #58a6ff; border-color: #58a6ff44; background: #58a6ff11; }
-  .badge-green { color: #3fb950; border-color: #3fb95044; background: #3fb95011; }
-  .badge-purple { color: #a371f7; border-color: #a371f744; background: #a371f711; }
-  .bio { margin-top: 1.25rem; font-size: 14px; line-height: 1.8; color: #8b949e; max-width: 560px; font-family: var(--font-sans, sans-serif); }
-  .section { padding: 2rem; border-bottom: 0.5px solid #21262d; }
-  .section-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #58a6ff; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 8px; }
-  .section-label::after { content: ''; flex: 1; height: 0.5px; background: #21262d; }
-  .edu-card { background: #0d1117; border: 0.5px solid #21262d; border-radius: 10px; padding: 1.25rem 1.5rem; position: relative; overflow: hidden; }
-  .edu-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #58a6ff; border-radius: 3px 0 0 3px; }
-  .edu-school { font-size: 15px; font-weight: 600; color: #e6edf3; }
-  .edu-degree { font-size: 13px; color: #58a6ff; margin-top: 2px; }
-  .edu-status { font-size: 12px; color: #8b949e; margin-top: 6px; display: flex; align-items: center; gap: 6px; }
-  .dot-pulse { width: 7px; height: 7px; border-radius: 50%; background: #3fb950; display: inline-block; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
-  .skill-card { background: #0d1117; border: 0.5px solid #21262d; border-radius: 8px; padding: 0.85rem 1rem; transition: border-color 0.2s; }
-  .skill-card:hover { border-color: #58a6ff44; }
-  .skill-name { font-size: 13px; color: #e6edf3; font-weight: 500; }
-  .skill-type { font-size: 11px; color: #8b949e; margin-top: 3px; }
-  .skill-bar { height: 2px; border-radius: 2px; background: #21262d; margin-top: 10px; overflow: hidden; }
-  .skill-fill { height: 100%; border-radius: 2px; background: #58a6ff; }
-  .cert-list { display: flex; flex-direction: column; gap: 10px; }
-  .cert-item { background: #0d1117; border: 0.5px solid #21262d; border-radius: 8px; padding: 0.85rem 1rem; display: flex; align-items: center; gap: 12px; }
-  .cert-icon { width: 32px; height: 32px; border-radius: 6px; background: #a371f711; border: 0.5px solid #a371f744; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; }
-  .cert-title { font-size: 13px; color: #e6edf3; font-weight: 500; }
-  .cert-org { font-size: 11px; color: #8b949e; margin-top: 2px; }
-  .cert-status { margin-left: auto; font-size: 10px; padding: 2px 8px; border-radius: 20px; }
-  .status-progress { color: #e3b341; border: 0.5px solid #e3b34144; background: #e3b34111; }
-  .contact-row { display: flex; gap: 10px; flex-wrap: wrap; }
-  .contact-btn { font-size: 12px; padding: 6px 14px; border-radius: 6px; border: 0.5px solid #21262d; background: #0d1117; color: #8b949e; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; font-family: var(--font-mono, monospace); }
-  .contact-btn:hover { border-color: #58a6ff44; color: #58a6ff; }
-  .footer { padding: 1.5rem 2rem; text-align: center; font-size: 11px; color: #484f58; }
-  .prompt { color: #3fb950; }
-</style>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jeffery Perez · Portfolio</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
 
-<div class="hero">
-  <div class="tag">// portfolio</div>
-  <div class="name">Jeffery <span>Perez</span></div>
-  <div class="title-row">
-    <span class="badge badge-blue">Programming</span>
-    <span class="badge badge-green">Finance</span>
-    <span class="badge badge-purple">Customer Service</span>
-  </div>
-  <div class="bio">
-    Aspiring software developer and programming student at San Antonio College, building a foundation in computer science while exploring intersections with finance and tech. Passionate about writing clean code and solving real-world problems.
-  </div>
-</div>
+<body>
+    <div class="hero">
+        <div class="tag">// portfolio</div>
+        <div class="name">Jeffery <span>Perez</span></div>
+        <div class="title-row">
+            <span class="badge badge-blue">Programming</span>
+            <span class="badge badge-green">Finance</span>
+            <span class="badge badge-purple">Customer Service</span>
+        </div>
+            <div class="bio">
+                Aspiring software developer and programming student at San Antonio College, building a foundation in computer science while exploring intersections with finance and tech. Passionate about writing clean code and solving real-world problems.
+            </div>
+    </div>
 
-<div class="section">
-  <div class="section-label">Education</div>
-  <div class="edu-card">
-    <div class="edu-school">San Antonio College</div>
-    <div class="edu-degree">Associate of Science — Programming</div>
-    <div class="edu-status">
-      <span class="dot-pulse"></span>
-      Currently enrolled · Degree in progress
+    <div class="section">
+        <div class="section-label">Education</div>
+        <div class="edu-card">
+            <div class="edu-school">San Antonio College</div>
+            <div class="edu-degree">Associate of Science — Programming</div>
+            <div class="edu-status">
+                <span class="dot-pulse"></span>
+                    Currently enrolled · Degree in progress
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-<div class="section">
-  <div class="section-label">Technical skills</div>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-name">Python</div>
-      <div class="skill-type">General purpose</div>
-      <div class="skill-bar"><div class="skill-fill" style="width:80%;background:#58a6ff"></div></div>
+    <div class="section">
+        <div class="section-label">Technical skills</div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-name">Python</div>
+                <div class="skill-type">General purpose</div>
+                <div class="skill-bar"><div class="skill-fill" style="width:80%;background:#58a6ff"></div></div>
+            </div>
+                <div class="skill-card">
+                    <div class="skill-name">C++</div>
+                    <div class="skill-type">Systems / logic</div>
+                    <div class="skill-bar"><div class="skill-fill" style="width:65%;background:#a371f7"></div></div>
+                </div>
+                    <div class="skill-card">
+                        <div class="skill-name">HTML</div>
+                        <div class="skill-type">Web / markup</div>
+                        <div class="skill-bar"><div class="skill-fill" style="width:70%;background:#e3b341"></div></div>
+                    </div>
+                        <div class="skill-card">
+                            <div class="skill-name">GDScript</div>
+                            <div class="skill-type">Game dev / Godot</div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:60%;background:#3fb950"></div></div>
+                        </div>
+        </div>
     </div>
-    <div class="skill-card">
-      <div class="skill-name">C++</div>
-      <div class="skill-type">Systems / logic</div>
-      <div class="skill-bar"><div class="skill-fill" style="width:65%;background:#a371f7"></div></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-name">HTML</div>
-      <div class="skill-type">Web / markup</div>
-      <div class="skill-bar"><div class="skill-fill" style="width:70%;background:#e3b341"></div></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-name">GDScript</div>
-      <div class="skill-type">Game dev / Godot</div>
-      <div class="skill-bar"><div class="skill-fill" style="width:60%;background:#3fb950"></div></div>
-    </div>
-  </div>
-</div>
 
-<div class="section">
-  <div class="section-label">Certifications &amp; coursework</div>
-  <div class="cert-list">
-    <div class="cert-item">
-      <div class="cert-icon">🎓</div>
-      <div>
-        <div class="cert-title">Associate of Science — Programming</div>
-        <div class="cert-org">San Antonio College</div>
-      </div>
-      <div class="cert-status status-progress">In progress</div>
+    <div class="section">
+        <div class="section-label">Certifications &amp; coursework</div>
+        <div class="cert-list">
+            <div class="cert-item">
+                <div class="cert-icon">🎓</div>
+                <div>
+                    <div class="cert-title">Associate of Science — Programming</div>
+                    <div class="cert-org">San Antonio College</div>
+                </div>
+                        <div class="cert-status status-progress">In progress
+                        </div>
+            </div>
+                        <div class="cert-item">
+                            <div class="cert-icon">📋</div>
+                            <div>
+                                <div class="cert-title">Add your certifications here</div>
+                                <div class="cert-org">e.g. Google, Coursera, CompTIA</div>
+                            </div>
+                                <div class="cert-status status-progress">Placeholder</div>
+                        </div>
+        </div>
     </div>
-    <div class="cert-item">
-      <div class="cert-icon">📋</div>
-      <div>
-        <div class="cert-title">Add your certifications here</div>
-        <div class="cert-org">e.g. Google, Coursera, CompTIA</div>
-      </div>
-      <div class="cert-status status-progress">Placeholder</div>
+
+    <div class="section">
+        <div class="section-label">Contact</div>
+        <div class="contact-row">
+            <span class="contact-btn"><span class="prompt">$ </span>email</span>
+            <span class="contact-btn"><span class="prompt">$ </span>linkedin</span>
+            <span class="contact-btn"><span class="prompt">$ </span>github</span>
+        </div>
     </div>
-  </div>
-</div>
 
-<div class="section">
-  <div class="section-label">Contact</div>
-  <div class="contact-row">
-    <span class="contact-btn"><span class="prompt">$ </span>email</span>
-    <span class="contact-btn"><span class="prompt">$ </span>linkedin</span>
-    <span class="contact-btn"><span class="prompt">$ </span>github</span>
-  </div>
-</div>
+    <div class="footer">
+        <span class="prompt">jeffery@portfolio</span>:~$ <span style="color:#484f58">built with code &amp; caffeine</span>
+    </div>
+</body>
 
-<div class="footer">
-  <span class="prompt">jeffery@portfolio</span>:~$ <span style="color:#484f58">built with code &amp; caffeine</span>
-</div>
+</html>
