@@ -1,0 +1,224 @@
+# NotSoJeff.github.io
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-sans);background:#141414;color:#e5e5e5;min-height:100vh}
+.nav{display:flex;align-items:center;gap:2rem;padding:1rem 2rem;background:linear-gradient(to bottom,#141414cc,transparent);position:sticky;top:0;z-index:10}
+.nav-logo{font-size:1.5rem;font-weight:700;color:#e50914;letter-spacing:-1px}
+.nav-links{display:flex;gap:1.5rem}
+.nav-link{font-size:13px;color:#e5e5e5cc;cursor:pointer;text-decoration:none}
+.nav-link:hover{color:#fff}
+.hero{position:relative;padding:5rem 2rem 3rem;background:#141414}
+.hero-tag{font-size:11px;color:#e50914;letter-spacing:3px;text-transform:uppercase;margin-bottom:0.75rem}
+.hero-name{font-size:3rem;font-weight:700;color:#fff;line-height:1;margin-bottom:0.5rem}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem}
+.hbadge{font-size:11px;padding:3px 10px;border-radius:3px;background:#ffffff22;color:#ffffffcc}
+.hero-bio{font-size:14px;color:#ffffffaa;max-width:500px;line-height:1.7;margin-bottom:1.5rem}
+.hero-btns{display:flex;gap:10px}
+.btn{font-size:13px;padding:8px 20px;border-radius:4px;border:none;cursor:pointer;font-weight:600;font-family:var(--font-sans)}
+.btn-red{background:#e50914;color:#fff}
+.btn-red:hover{background:#f40612}
+.btn-gray{background:#ffffff33;color:#fff;border:0.5px solid #ffffff44}
+.btn-gray:hover{background:#ffffff44}
+.section{padding:1.5rem 2rem}
+.row-label{font-size:14px;font-weight:600;color:#fff;margin-bottom:0.75rem}
+.cards-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+.cards-row::-webkit-scrollbar{display:none}
+.card{flex:0 0 180px;border-radius:4px;overflow:hidden;background:#1f1f1f;position:relative;cursor:pointer;transition:transform 0.2s}
+.card:hover{transform:scale(1.05);z-index:2}
+.card-thumb{width:100%;height:100px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.thumb-blue{background:#1a3a5c}
+.thumb-red{background:#5c1a1a}
+.thumb-green{background:#1a3a2a}
+.thumb-purple{background:#2d1a5c}
+.thumb-amber{background:#5c3d1a}
+.card-body{padding:8px}
+.card-title{font-size:12px;font-weight:600;color:#fff}
+.card-sub{font-size:11px;color:#888;margin-top:2px}
+.card-badge{position:absolute;top:6px;right:6px;font-size:9px;padding:2px 6px;border-radius:2px;font-weight:700}
+.badge-earned{background:#e50914;color:#fff}
+.badge-progress{background:#e5a909;color:#141414}
+.skill-strip{display:flex;gap:8px;flex-wrap:wrap}
+.skill-pill{display:flex;align-items:center;gap:8px;background:#1f1f1f;border-radius:4px;padding:10px 14px;flex:1 0 140px}
+.skill-icon{font-size:1.2rem}
+.skill-info{}
+.skill-name{font-size:13px;font-weight:600;color:#fff}
+.skill-type{font-size:11px;color:#888}
+.skill-bar{height:2px;background:#333;border-radius:2px;margin-top:6px;width:100%}
+.skill-fill{height:100%;border-radius:2px;background:#e50914}
+.cert-rows{display:flex;flex-direction:column;gap:8px}
+.cert-row{display:flex;align-items:center;gap:12px;background:#1f1f1f;border-radius:4px;padding:12px 14px}
+.cert-thumb{width:40px;height:40px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;background:#2a1a1a}
+.cert-info{flex:1}
+.cert-title{font-size:13px;font-weight:600;color:#fff}
+.cert-org{font-size:11px;color:#888;margin-top:2px}
+.cert-credly{font-size:10px;color:#f7941d;margin-top:3px}
+.cert-status{font-size:10px;padding:2px 8px;border-radius:2px;font-weight:700;white-space:nowrap}
+.st-earned{background:#e50914;color:#fff}
+.st-progress{background:#e5a909;color:#141414}
+.match-bar{display:flex;align-items:center;gap:8px;margin-bottom:1rem}
+.match-pct{font-size:1rem;font-weight:700;color:#4caf50}
+.match-label{font-size:13px;color:#ffffff88}
+.footer{padding:2rem;text-align:center;font-size:11px;color:#444;border-top:0.5px solid #222}
+</style>
+
+<div style="background:#141414;min-height:100vh">
+
+<div class="nav">
+  <div class="nav-logo">NotSoJeff</div>
+  <div class="nav-links">
+    <a class="nav-link" href="#">About</a>
+    <a class="nav-link" href="#">Skills</a>
+    <a class="nav-link" href="#">Certs</a>
+    <a class="nav-link" href="#">Contact</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">// Featured Profile</div>
+  <div class="hero-name">Jeffery Perez</div>
+  <div class="hero-badges">
+    <span class="hbadge">Programming</span>
+    <span class="hbadge">Finance</span>
+    <span class="hbadge">Customer Service</span>
+  </div>
+  <div class="hero-bio">
+    Aspiring software developer and programming student at San Antonio College, building a foundation in computer science while exploring intersections with finance and tech. Passionate about writing clean code and solving real-world problems.
+  </div>
+  <div class="hero-btns">
+    <button class="btn btn-red">&#9654; View Resume</button>
+    <button class="btn btn-gray">+ More Info</button>
+  </div>
+</div>
+
+<div class="section">
+  <div class="match-bar">
+    <span class="match-pct">97% Match</span>
+    <span class="match-label">for tech roles · CS Student · San Antonio College</span>
+  </div>
+  <div class="row-label">Languages &amp; Skills</div>
+  <div class="skill-strip">
+    <div class="skill-pill">
+      <div class="skill-icon">🐍</div>
+      <div class="skill-info">
+        <div class="skill-name">Python</div>
+        <div class="skill-type">General purpose</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+      </div>
+    </div>
+    <div class="skill-pill">
+      <div class="skill-icon">⚙️</div>
+      <div class="skill-info">
+        <div class="skill-name">C++</div>
+        <div class="skill-type">Systems / logic</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+      </div>
+    </div>
+    <div class="skill-pill">
+      <div class="skill-icon">🌐</div>
+      <div class="skill-info">
+        <div class="skill-name">HTML</div>
+        <div class="skill-type">Web / markup</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+      </div>
+    </div>
+    <div class="skill-pill">
+      <div class="skill-icon">🎮</div>
+      <div class="skill-info">
+        <div class="skill-name">GDScript</div>
+        <div class="skill-type">Game dev · Godot</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="row-label">Certifications &amp; Education</div>
+  <div class="cert-rows">
+    <div class="cert-row">
+      <div class="cert-thumb">🐍</div>
+      <div class="cert-info">
+        <div class="cert-title">Python Essentials 1</div>
+        <div class="cert-org">Cisco Networking Academy</div>
+        <div class="cert-credly">&#11044; Verified on Credly</div>
+      </div>
+      <div class="cert-status st-earned">EARNED</div>
+    </div>
+    <div class="cert-row">
+      <div class="cert-thumb">🐍</div>
+      <div class="cert-info">
+        <div class="cert-title">Python Essentials 2</div>
+        <div class="cert-org">Cisco Networking Academy</div>
+        <div class="cert-credly">&#11044; Verified on Credly</div>
+      </div>
+      <div class="cert-status st-earned">EARNED</div>
+    </div>
+    <div class="cert-row">
+      <div class="cert-thumb">🎓</div>
+      <div class="cert-info">
+        <div class="cert-title">A.S. — Programming</div>
+        <div class="cert-org">San Antonio College</div>
+      </div>
+      <div class="cert-status st-progress">IN PROGRESS</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="row-label">Currently Watching</div>
+  <div class="cards-row">
+    <div class="card">
+      <div class="card-thumb thumb-blue">📚</div>
+      <div class="card-body">
+        <div class="card-title">Data Structures</div>
+        <div class="card-sub">CS Core · SAC</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-thumb thumb-red">💻</div>
+      <div class="card-body">
+        <div class="card-title">C++ Programming</div>
+        <div class="card-sub">Systems · SAC</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-thumb thumb-amber">🎮</div>
+      <div class="card-body">
+        <div class="card-title">Godot Dev</div>
+        <div class="card-sub">Personal project</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-thumb thumb-green">💰</div>
+      <div class="card-body">
+        <div class="card-title">Finance Basics</div>
+        <div class="card-sub">Elective · SAC</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-thumb thumb-purple">🌐</div>
+      <div class="card-body">
+        <div class="card-title">Web Dev</div>
+        <div class="card-sub">HTML · self-study</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="row-label">Contact</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn btn-gray">✉ Email</button>
+    <button class="btn btn-gray">LinkedIn</button>
+    <button class="btn btn-gray">GitHub</button>
+    <button class="btn btn-red">Credly</button>
+  </div>
+</div>
+
+<div class="footer">
+  NotSoJeff · Jeff Perez Portfolio · All rights reserved
+</div>
+
+</div>
+
